@@ -87,14 +87,20 @@
 
           <p class="event-location">📍 Tenkasi</p>
 
-          <a
-            class="location-button"
-            href="https://www.google.com/maps/search/?api=1&query=Tenkasi"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Location
-          </a>
+          <div class="event-buttons">
+            <button class="event-button" onclick="openEvent('wedding')">
+              Explore Wedding
+            </button>
+
+            <a
+              class="location-button"
+              href="https://www.google.com/maps/search/?api=1&query=Tenkasi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Location
+            </a>
+          </div>
         </article>
 
         <!-- RECEPTION -->
@@ -113,15 +119,20 @@
           <p class="event-time">4:00 PM – 10:00 PM</p>
 
           <p class="event-location">📍 Viluppuram</p>
+          <div class="event-buttons">
+            <button class="event-button" onclick="openEvent('reception')">
+              Explore Reception
+            </button>
 
-          <a
-            class="location-button"
-            href="https://www.google.com/maps/search/?api=1&query=Viluppuram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Location
-          </a>
+            <a
+              class="location-button"
+              href="https://www.google.com/maps/search/?api=1&query=Viluppuram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Location
+            </a>
+          </div>
         </article>
       </div>
     </section>
@@ -358,6 +369,111 @@
       </div>
     </section>
 
+    <!-- =========================
+     THANK YOU SECTION
+========================== -->
+
+    <section class="thank-you-section">
+      <div class="thank-you-content">
+        <div class="thank-you-heart">♥</div>
+
+        <p class="section-label">WITH GRATITUDE</p>
+
+        <h2>Thank You</h2>
+
+        <div class="heading-divider">✦</div>
+
+        <p class="thank-you-message">
+          Your presence, blessings, and love mean more to us than words can
+          express.
+        </p>
+
+        <p class="thank-you-message">
+          Thank you for being a part of our special day and for celebrating this
+          beautiful beginning with us.
+        </p>
+
+        <div class="thank-you-names">Sundar <span>&</span> Sundari</div>
+
+        <p class="thank-you-date">28 November 2026</p>
+
+        <div class="thank-you-divider">
+          <span></span>
+          <span>♥</span>
+          <span></span>
+        </div>
+
+        <button
+          class="back-to-top"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          Back to Beginning ↑
+        </button>
+      </div>
+    </section>
+    <!-- =========================
+     EVENT DETAILS MODAL
+========================== -->
+
+    <div class="event-modal" id="event-modal" aria-hidden="true">
+      <div class="event-modal-overlay" onclick="closeEvent()"></div>
+
+      <div class="event-modal-content">
+        <button
+          class="event-modal-close"
+          onclick="closeEvent()"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="event-modal-inner">
+          <p class="section-label" id="modal-event-type">WEDDING CEREMONY</p>
+
+          <h2 id="modal-event-title">Sundar & Sundari</h2>
+
+          <div class="heading-divider">✦</div>
+
+          <div class="modal-event-info">
+            <p id="modal-event-date">28 November 2026</p>
+
+            <p id="modal-event-time">9:00 AM – 10:30 AM</p>
+
+            <p id="modal-event-location">📍 Tenkasi</p>
+          </div>
+
+          <a
+            id="modal-map-button"
+            class="location-button"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open Google Maps
+          </a>
+
+          <!-- TIMELINE -->
+
+          <div class="event-timeline-section">
+            <p class="section-label">THE SCHEDULE</p>
+
+            <h3 id="modal-schedule-title">Event Schedule</h3>
+
+            <div class="event-timeline" id="event-timeline"></div>
+          </div>
+
+          <!-- PHOTOS -->
+
+          <div class="event-photos-section">
+            <p class="section-label">MOMENTS</p>
+
+            <h3>Memories</h3>
+
+            <div class="event-photo-grid" id="event-photo-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
