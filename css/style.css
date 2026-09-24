@@ -1,9 +1,770 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  text-align: center;
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
 }
 
-main {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f8f3ea;
+  color: #3d3028;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px 20px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 45%),
+    #f8f3ea;
+}
+
+/* Decorative border */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 18px;
+
+  border: 1px solid rgba(120, 88, 55, 0.35);
+
+  pointer-events: none;
+}
+
+/* Inner border */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 25px;
+
+  border: 1px solid rgba(120, 88, 55, 0.15);
+
+  pointer-events: none;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 700px;
+
+  animation: fadeIn 1.5s ease;
+}
+
+/* =========================
+   OM SYMBOL
+========================= */
+
+.decorative-symbol {
+  font-size: 48px;
+
+  margin-bottom: 20px;
+
+  color: #8b6a3e;
+}
+
+/* =========================
+   INVITATION TEXT
+========================= */
+
+.invitation-text {
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 5px;
+
+  margin: 0;
+
+  color: #8b6a3e;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 24px auto;
+
+  width: 220px;
+}
+
+.divider span:first-child,
+.divider span:last-child {
+  height: 1px;
+
+  flex: 1;
+
+  background: rgba(120, 88, 55, 0.35);
+}
+
+.divider span:nth-child(2) {
+  color: #a77a3f;
+
+  font-size: 14px;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.invite-message {
+  font-size: 16px;
+
+  font-style: italic;
+
+  margin: 20px 0;
+
+  color: #6d5a4b;
+}
+
+/* =========================
+   COUPLE NAMES
+========================= */
+
+.couple-names {
+  margin: 15px 0;
+
+  font-size: clamp(38px, 8vw, 72px);
+
+  font-weight: normal;
+
+  line-height: 1.15;
+
+  color: #382a22;
+}
+
+.couple-names span {
+  display: block;
+
+  font-size: 32px;
+
+  margin: 10px 0;
+
+  font-style: italic;
+
+  color: #a77a3f;
+}
+
+/* =========================
+   DATE
+========================= */
+
+.wedding-date {
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  letter-spacing: 3px;
+
+  margin-top: 20px;
+
+  color: #6d5a4b;
+}
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll-text {
+  margin-top: 45px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  color: #8b6a3e;
+}
+
+.scroll-arrow {
+  font-size: 24px;
+
+  margin-top: 8px;
+
+  animation: bounce 2s infinite;
+}
+
+/* =========================
+   INTRO SECTION
+========================= */
+
+.intro-section {
+  min-height: 60vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  background: #fffaf3;
+}
+
+.section-label {
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  color: #a77a3f;
+}
+
+.intro-section h2 {
+  font-size: clamp(32px, 6vw, 50px);
+
+  font-weight: normal;
+
+  margin: 15px 0;
+}
+
+.intro-section p:last-child {
+  color: #6d5a4b;
+
+  font-size: 16px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(8px);
+  }
+
+  60% {
+    transform: translateY(4px);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero::before {
+    inset: 12px;
+  }
+
+  .hero::after {
+    inset: 18px;
+  }
+
+  .decorative-symbol {
+    font-size: 40px;
+  }
+
+  .invitation-text {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .invite-message {
+    font-size: 14px;
+  }
+
+  .couple-names {
+    font-size: 40px;
+  }
+
+  .couple-names span {
+    font-size: 26px;
+  }
+
+  .wedding-date {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+}
+/* =========================
+   EVENTS SECTION
+========================= */
+
+.events-section {
+  min-height: 100vh;
+
   padding: 100px 20px;
+
+  text-align: center;
+
+  background: #f8f3ea;
+}
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+  max-width: 650px;
+
+  margin: 0 auto 60px;
+}
+
+.section-heading h2 {
+  margin: 10px 0;
+
+  font-size: clamp(36px, 7vw, 58px);
+
+  font-weight: normal;
+
+  color: #382a22;
+}
+
+.section-heading > p:last-child {
+  margin-top: 20px;
+
+  color: #6d5a4b;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.heading-divider {
+  margin: 20px auto;
+
+  color: #a77a3f;
+
+  font-size: 18px;
+}
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+.events-container {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 35px;
+}
+
+.event-card {
+  position: relative;
+
+  padding: 55px 35px;
+
+  background: #fffaf3;
+
+  border: 1px solid rgba(120, 88, 55, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Inner decorative border */
+
+.event-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 10px;
+
+  border: 1px solid rgba(120, 88, 55, 0.12);
+
+  pointer-events: none;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 15px 35px rgba(60, 40, 20, 0.1);
+}
+
+/* =========================
+   EVENT ICON
+========================= */
+
+.event-icon {
+  font-size: 34px;
+
+  color: #a77a3f;
+
+  margin-bottom: 20px;
+}
+
+/* =========================
+   EVENT TYPE
+========================= */
+
+.event-type {
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  color: #8b6a3e;
+
+  margin: 0 0 15px;
+}
+
+/* =========================
+   EVENT TITLE
+========================= */
+
+.event-card h3 {
+  font-size: 28px;
+
+  font-weight: normal;
+
+  margin: 0;
+
+  color: #382a22;
+}
+
+/* =========================
+   EVENT DIVIDER
+========================= */
+
+.event-divider {
+  margin: 22px 0;
+
+  color: #a77a3f;
+}
+
+/* =========================
+   EVENT DETAILS
+========================= */
+
+.event-date {
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  margin: 10px 0;
+
+  color: #4d3c30;
+}
+
+.event-time {
+  font-size: 15px;
+
+  color: #6d5a4b;
+
+  margin: 8px 0;
+}
+
+.event-location {
+  font-size: 16px;
+
+  margin: 20px 0 28px;
+
+  color: #4d3c30;
+}
+
+/* =========================
+   LOCATION BUTTON
+========================= */
+
+.location-button {
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  border: 1px solid #8b6a3e;
+
+  color: #6d4f2e;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.location-button:hover {
+  background: #8b6a3e;
+
+  color: #fff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .events-section {
+    padding: 80px 20px;
+  }
+
+  .events-container {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .event-card {
+    padding: 45px 25px;
+  }
+}
+
+/* =========================
+   COUNTDOWN SECTION
+========================= */
+
+.countdown-section {
+  min-height: 75vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+  background: #fffaf3;
+}
+
+.countdown-content {
+  width: 100%;
+
+  max-width: 900px;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.countdown-content h2 {
+  margin: 10px 0;
+
+  font-size: clamp(38px, 7vw, 60px);
+
+  font-weight: normal;
+
+  color: #382a22;
+}
+
+.countdown-message {
+  margin: 15px 0 50px;
+
+  font-size: 16px;
+
+  font-style: italic;
+
+  color: #6d5a4b;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.countdown-box {
+  width: 140px;
+
+  height: 140px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border: 1px solid rgba(120, 88, 55, 0.3);
+
+  background: #f8f3ea;
+
+  position: relative;
+}
+
+/* Inner border */
+
+.countdown-box::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(120, 88, 55, 0.12);
+}
+
+.countdown-box span {
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+
+  line-height: 1;
+
+  color: #382a22;
+
+  position: relative;
+}
+
+.countdown-box small {
+  margin-top: 12px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  color: #8b6a3e;
+
+  position: relative;
+}
+
+/* =========================
+   DATE
+========================= */
+
+.countdown-date {
+  margin-top: 45px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  color: #6d5a4b;
+}
+
+.countdown-heart {
+  margin-top: 18px;
+
+  color: #a77a3f;
+
+  font-size: 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .countdown-section {
+    min-height: auto;
+
+    padding: 80px 15px;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown-box {
+    width: 125px;
+
+    height: 125px;
+  }
+
+  .countdown-box span {
+    font-size: 36px;
+  }
 }
