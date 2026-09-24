@@ -47,3 +47,18 @@ updateCountdown();
 
 // Update every second
 setInterval(updateCountdown, 1000);
+
+// =========================
+// PHOTO GALLERY SCROLL
+// =========================
+
+function scrollGallery(galleryId, direction) {
+  const gallery = document.getElementById(galleryId);
+
+  const scrollAmount = 320;
+
+  gallery.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
+}
