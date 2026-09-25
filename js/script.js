@@ -71,70 +71,99 @@ const eventData = {
     time: "9:00 AM – 10:30 AM",
     location: "📍 Tenkasi",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Tenkasi",
+    scheduleTitle: "Wedding Day Schedule",
 
-    timeline: [
+    events: [
       {
         time: "08:00 AM",
         title: "Guest Arrival",
-        description:
-          "Welcome to our special day. Guests are invited to arrive and take their seats.",
+        venue: "Wedding Venue, Tenkasi",
+
+        // Add photo when available
+        photo: "images/wedding-events/guest-arrival.jpg",
+
+        // Everything you want to show when Details is clicked
+        details:
+          "Welcome to our special day. Guests are invited to arrive, settle in and take their seats.",
       },
 
       {
         time: "08:30 AM",
         title: "Family Gathering",
-        description:
-          "Families and close relatives gather together for the auspicious wedding rituals.",
+        venue: "Wedding Venue, Tenkasi",
+
+        // No photo yet
+        photo: null,
+
+        details:
+          "Families and close relatives gather together for the auspicious wedding rituals. This is a special time for both families to come together.",
       },
 
       {
         time: "09:00 AM",
         title: "Wedding Ceremony Begins",
-        description:
+        venue: "Wedding Venue, Tenkasi",
+
+        photo: "images/wedding-events/ceremony.jpg",
+
+        details:
           "The wedding ceremony begins with the blessings of our families and elders.",
       },
 
       {
         time: "09:15 AM",
         title: "Thali Kattu",
-        description:
+        venue: "Wedding Venue, Tenkasi",
+
+        photo: "images/wedding-events/thali-kattu.jpg",
+
+        details:
           "A beautiful and sacred moment as Sundar ties the thali, marking the beginning of our journey together.",
       },
 
       {
         time: "09:30 AM",
         title: "Wedding Rituals",
-        description:
+        venue: "Wedding Venue, Tenkasi",
+
+        photo: null,
+
+        details:
           "Traditional wedding rituals and blessings with our family and loved ones.",
       },
 
       {
         time: "10:00 AM",
         title: "Family Blessings & Photos",
-        description:
+        venue: "Wedding Venue, Tenkasi",
+
+        photo: "images/wedding-events/family-blessings.jpg",
+
+        details:
           "Seeking the blessings of our elders and capturing precious moments with our families.",
       },
 
       {
         time: "10:30 AM",
         title: "Wedding Ceremony Ends",
-        description:
+        venue: "Wedding Venue, Tenkasi",
+
+        photo: null,
+
+        details:
           "Thank you for joining us and blessing the beginning of our new journey.",
       },
 
       {
         time: "12:30 PM",
         title: "Lunch",
-        description:
+        venue: "Wedding Venue, Tenkasi",
+
+        photo: null,
+
+        details:
           "Please join us for a traditional wedding lunch with family and friends.",
       },
-    ],
-
-    photos: [
-      "images/wedding-1.jpg",
-      "images/wedding-2.jpg",
-      "images/wedding-3.jpg",
-      "images/wedding-4.jpg",
     ],
   },
 
@@ -145,70 +174,96 @@ const eventData = {
     time: "4:00 PM – 10:00 PM",
     location: "📍 Viluppuram",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Viluppuram",
+    scheduleTitle: "Reception Schedule",
 
-    timeline: [
+    events: [
       {
         time: "04:00 PM",
         title: "Guest Arrival",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: "images/reception-events/guest-arrival.jpg",
+
+        details:
           "Welcome to the reception. Guests are invited to arrive and join the celebration.",
       },
 
       {
         time: "04:30 PM",
         title: "Meet & Greet",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: null,
+
+        details:
           "An opportunity to meet the couple, family members and friends.",
       },
 
       {
         time: "05:30 PM",
         title: "Couple's Entry",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: "images/reception-events/couple-entry.jpg",
+
+        details:
           "Join us as we welcome Sundar & Sundari to their special evening.",
       },
 
       {
         time: "06:00 PM",
         title: "Greetings & Blessings",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: null,
+
+        details:
           "Family and friends share their blessings and warm wishes with the couple.",
       },
 
       {
         time: "07:00 PM",
         title: "Photography & Memories",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: "images/reception-events/photography.jpg",
+
+        details:
           "Let's capture some beautiful memories together with family and friends.",
       },
 
       {
         time: "07:30 PM",
         title: "Dinner",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: null,
+
+        details:
           "Please join us for dinner and continue the celebration with us.",
       },
 
       {
         time: "09:30 PM",
         title: "Final Greetings",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: null,
+
+        details:
           "A final opportunity to meet, greet and share your blessings with the couple.",
       },
 
       {
         time: "10:00 PM",
         title: "Reception Ends",
-        description:
+        venue: "Reception Venue, Viluppuram",
+
+        photo: null,
+
+        details:
           "Thank you for being part of our celebration and making our evening memorable.",
       },
-    ],
-
-    photos: [
-      "images/reception-1.jpg",
-      "images/reception-2.jpg",
-      "images/reception-3.jpg",
-      "images/reception-4.jpg",
     ],
   },
 };
@@ -346,4 +401,128 @@ function openEvent(eventName) {
   modal.setAttribute("aria-hidden", "false");
 
   document.body.classList.add("modal-open");
+}
+
+function renderEventSchedule(events) {
+  const container = document.getElementById("event-timeline");
+
+  container.innerHTML = "";
+
+  events.forEach((event, index) => {
+    const eventItem = document.createElement("div");
+
+    eventItem.className = "schedule-card";
+
+    eventItem.innerHTML = `
+      ${
+        event.photo
+          ? `
+            <div class="schedule-photo">
+              <img
+                src="${event.photo}"
+                alt="${event.title}"
+                loading="lazy"
+              />
+            </div>
+          `
+          : ""
+      }
+
+      <div class="schedule-card-content">
+
+        <div class="schedule-time">
+          ${event.time}
+        </div>
+
+        <h4>${event.title}</h4>
+
+        <p class="schedule-venue">
+          📍 ${event.venue}
+        </p>
+
+        <button
+          class="schedule-details-button"
+          onclick="toggleEventDetails(${index})"
+        >
+          View Details
+        </button>
+
+        <div
+          class="schedule-details"
+          id="schedule-details-${index}"
+        >
+          <p>${event.details}</p>
+        </div>
+
+      </div>
+    `;
+
+    container.appendChild(eventItem);
+  });
+}
+
+function toggleEventDetails(index) {
+  const details = document.getElementById(`schedule-details-${index}`);
+
+  const button = details.previousElementSibling;
+
+  const isOpen = details.classList.contains("active");
+
+  // Close all other details
+  document.querySelectorAll(".schedule-details").forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  document.querySelectorAll(".schedule-details-button").forEach((item) => {
+    item.textContent = "View Details";
+  });
+
+  // Open selected one
+  if (!isOpen) {
+    details.classList.add("active");
+    button.textContent = "Hide Details";
+  }
+}
+
+function openEvent(eventName) {
+  const event = eventData[eventName];
+
+  if (!event) {
+    return;
+  }
+
+  document.getElementById("modal-event-type").textContent = event.type;
+
+  document.getElementById("modal-event-title").textContent = event.title;
+
+  document.getElementById("modal-schedule-title").textContent =
+    event.scheduleTitle;
+
+  document.getElementById("modal-event-date").textContent = event.date;
+
+  document.getElementById("modal-event-time").textContent = event.time;
+
+  document.getElementById("modal-event-location").textContent = event.location;
+
+  document.getElementById("modal-map-button").href = event.mapUrl;
+
+  renderEventSchedule(event.events);
+
+  const modal = document.getElementById("event-modal");
+
+  modal.classList.add("active");
+
+  modal.setAttribute("aria-hidden", "false");
+
+  document.body.classList.add("modal-open");
+}
+
+function closeEvent() {
+  const modal = document.getElementById("event-modal");
+
+  modal.classList.remove("active");
+
+  modal.setAttribute("aria-hidden", "true");
+
+  document.body.classList.remove("modal-open");
 }
