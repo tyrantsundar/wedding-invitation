@@ -118,7 +118,7 @@ const CONTENT = {
 
     groomTitle: "GROOM'S TEAM",
 
-    brideTitle: "BRIDE's TEAM",
+    brideTitle: "BRIDE'S TEAM",
 
     previousCouple: "Previous couple photo",
 
@@ -378,10 +378,9 @@ const EVENT_SCHEDULES = {
 
       venue: `Wedding Venue, ${WEDDING.location.name}`,
 
-      photo: null,
+      photo: "images/wedding-events/lunch.jpg",
 
-      details:
-        "Please join us for a traditional wedding lunch with family and friends.",
+      details: "Nalla sapdunga bro !",
     },
   ],
 
