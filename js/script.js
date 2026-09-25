@@ -1,20 +1,297 @@
-// =========================
-// WEDDING COUNTDOWN
-// =========================
+// ============================================================
+// WEDDING CONFIG
+// ============================================================
 
-const weddingDate = new Date("November 28, 2026 09:00:00").getTime();
+const wedding = WEDDING_CONFIG;
+
+// ============================================================
+// PAGE INITIALIZATION
+// ============================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  initializePage();
+
+  initializeModal();
+
+  initializeCountdown();
+});
+
+// ============================================================
+// PAGE INITIALIZATION
+// ============================================================
+
+function initializePage() {
+  renderMetaContent();
+
+  renderHero();
+
+  renderCelebrations();
+
+  renderStory();
+
+  renderFamilyGalleries();
+
+  renderCountdownContent();
+
+  renderThankYou();
+}
+
+// ============================================================
+// META / PAGE TITLE
+// ============================================================
+
+function renderMetaContent() {
+  const metaDescription = document.getElementById("meta-description");
+
+  const pageTitle = document.getElementById("page-title");
+
+  if (metaDescription) {
+    metaDescription.setAttribute("content", wedding.content.meta.description);
+  }
+
+  if (pageTitle) {
+    pageTitle.textContent = wedding.content.meta.title;
+  }
+}
+
+// ============================================================
+// HERO
+// ============================================================
+
+function renderHero() {
+  setText("hero-invitation-label", wedding.content.hero.invitationLabel);
+
+  setText("hero-message", wedding.content.hero.message);
+
+  setCoupleName("hero-couple-names");
+
+  setText("hero-wedding-date", wedding.wedding.date.display);
+
+  setText("hero-scroll-text", wedding.content.hero.scrollText);
+}
+
+// ============================================================
+// COUPLE NAME
+// ============================================================
+
+function setCoupleName(elementId) {
+  const element = document.getElementById(elementId);
+
+  if (!element) {
+    return;
+  }
+
+  element.innerHTML = `
+    ${escapeHtml(wedding.couple.groom.fullName)}
+
+    <span>&</span>
+
+    ${escapeHtml(wedding.couple.bride.fullName)}
+  `;
+}
+
+// ============================================================
+// CELEBRATIONS
+// ============================================================
+
+function renderCelebrations() {
+  const content = wedding.content.celebrations;
+
+  setText("celebrations-label", content.label);
+
+  setText("celebrations-title", content.title);
+
+  setText("celebrations-description", content.description);
+
+  renderEventCard("wedding", content.weddingButton, content.locationButton);
+
+  renderEventCard("reception", content.receptionButton, content.locationButton);
+}
+
+// ============================================================
+// EVENT CARD
+// ============================================================
+
+function renderEventCard(eventName, exploreButtonText, locationButtonText) {
+  const event = wedding.events[eventName];
+
+  if (!event) {
+    return;
+  }
+
+  setText(`${eventName}-event-type`, event.type);
+
+  setText(`${eventName}-event-title`, event.title);
+
+  setText(`${eventName}-event-date`, event.date);
+
+  setText(`${eventName}-event-time`, event.time);
+
+  setText(`${eventName}-event-location`, event.location);
+
+  setText(`${eventName}-event-button`, exploreButtonText);
+
+  const locationButton = document.getElementById(
+    `${eventName}-location-button`,
+  );
+
+  if (locationButton) {
+    locationButton.textContent = locationButtonText;
+
+    locationButton.href = event.mapUrl;
+  }
+}
+
+// ============================================================
+// STORY
+// ============================================================
+
+function renderStory() {
+  const content = wedding.content.story;
+
+  setText("story-label", content.label);
+
+  setText("story-title", content.title);
+
+  setText("story-description", content.description);
+}
+
+// ============================================================
+// FAMILY GALLERIES
+// ============================================================
+
+function renderFamilyGalleries() {
+  renderFamilyGallery("couple", "couple-gallery");
+
+  renderFamilyGallery("groom", "groom-gallery");
+
+  renderFamilyGallery("bride", "bride-gallery");
+
+  const content = wedding.content.family;
+
+  setText("couple-family-label", content.coupleLabel);
+
+  setText("couple-family-title", wedding.couple.displayName);
+
+  setText("groom-family-label", content.groomLabel);
+
+  setText("groom-family-title", content.groomTitle);
+
+  setText("bride-family-label", content.brideLabel);
+
+  setText("bride-family-title", content.brideTitle);
+
+  setAttribute("couple-prev-button", "aria-label", content.previousCouple);
+
+  setAttribute("couple-next-button", "aria-label", content.nextCouple);
+
+  setAttribute("groom-prev-button", "aria-label", content.previousGroom);
+
+  setAttribute("groom-next-button", "aria-label", content.nextGroom);
+
+  setAttribute("bride-prev-button", "aria-label", content.previousBride);
+
+  setAttribute("bride-next-button", "aria-label", content.nextBride);
+}
+
+// ============================================================
+// RENDER FAMILY GALLERY
+// ============================================================
+
+function renderFamilyGallery(familyName, galleryId) {
+  const gallery = wedding.family[familyName];
+
+  const container = document.getElementById(galleryId);
+
+  if (!gallery || !container) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+  gallery.photos.forEach((photo) => {
+    const photoElement = document.createElement("div");
+
+    photoElement.className = "family-photo";
+
+    const image = document.createElement("img");
+
+    image.src = photo.src;
+
+    image.alt = photo.alt;
+
+    image.loading = "lazy";
+
+    photoElement.appendChild(image);
+
+    container.appendChild(photoElement);
+  });
+}
+
+// ============================================================
+// COUNTDOWN CONTENT
+// ============================================================
+
+function renderCountdownContent() {
+  const content = wedding.content.countdown;
+
+  setText("countdown-label", content.label);
+
+  setText("countdown-title", content.title);
+
+  setText("countdown-message", content.message);
+
+  setText("countdown-days-label", content.days);
+
+  setText("countdown-hours-label", content.hours);
+
+  setText("countdown-minutes-label", content.minutes);
+
+  setText("countdown-seconds-label", content.seconds);
+
+  setText("countdown-date", wedding.wedding.date.display);
+}
+
+// ============================================================
+// WEDDING COUNTDOWN
+// ============================================================
+
+let weddingDate;
+
+function initializeCountdown() {
+  weddingDate = new Date(wedding.wedding.countdownDateTime).getTime();
+
+  updateCountdown();
+
+  setInterval(updateCountdown, 1000);
+}
 
 function updateCountdown() {
+  if (!weddingDate) {
+    return;
+  }
+
   const now = new Date().getTime();
 
   const difference = weddingDate - now;
 
-  // Wedding day has arrived
+  const daysElement = document.getElementById("days");
+
+  const hoursElement = document.getElementById("hours");
+
+  const minutesElement = document.getElementById("minutes");
+
+  const secondsElement = document.getElementById("seconds");
+
+  if (!daysElement || !hoursElement || !minutesElement || !secondsElement) {
+    return;
+  }
+
   if (difference <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+    daysElement.textContent = "00";
+    hoursElement.textContent = "00";
+    minutesElement.textContent = "00";
+    secondsElement.textContent = "00";
 
     return;
   }
@@ -27,281 +304,125 @@ function updateCountdown() {
 
   const seconds = Math.floor((difference / 1000) % 60);
 
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
+  daysElement.textContent = String(days).padStart(2, "0");
 
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  hoursElement.textContent = String(hours).padStart(2, "0");
 
-  document.getElementById("minutes").textContent = String(minutes).padStart(
-    2,
-    "0",
-  );
+  minutesElement.textContent = String(minutes).padStart(2, "0");
 
-  document.getElementById("seconds").textContent = String(seconds).padStart(
-    2,
-    "0",
-  );
+  secondsElement.textContent = String(seconds).padStart(2, "0");
 }
 
-// Update immediately
-updateCountdown();
+// ============================================================
+// THANK YOU
+// ============================================================
 
-// Update every second
-setInterval(updateCountdown, 1000);
+function renderThankYou() {
+  const content = wedding.content.thankYou;
 
-// =========================
+  setText("thank-you-label", content.label);
+
+  setText("thank-you-title", content.title);
+
+  setText("thank-you-message-one", content.messageOne);
+
+  setText("thank-you-message-two", content.messageTwo);
+
+  setCoupleName("thank-you-names");
+
+  setText("thank-you-date", wedding.wedding.date.display);
+
+  setText("back-to-top-button", content.backToBeginning);
+}
+
+// ============================================================
 // PHOTO GALLERY SCROLL
-// =========================
+// ============================================================
 
 function scrollGallery(galleryId, direction) {
   const gallery = document.getElementById(galleryId);
+
+  if (!gallery) {
+    return;
+  }
 
   const scrollAmount = 320;
 
   gallery.scrollBy({
     left: direction * scrollAmount,
+
     behavior: "smooth",
   });
 }
 
-const eventData = {
-  wedding: {
-    type: "WEDDING CEREMONY",
-    title: "Sundar & Sundari",
-    date: "28 November 2026",
-    time: "9:00 AM – 10:30 AM",
-    location: "📍 Tenkasi",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Tenkasi",
-    scheduleTitle: "Wedding Day Schedule",
+// ============================================================
+// EVENT DATA
+// ============================================================
 
-    events: [
-      {
-        time: "08:00 AM",
-        title: "Guest Arrival",
-        venue: "Wedding Venue, Tenkasi",
+const eventData = wedding.events;
 
-        // Add photo when available
-        photo: "images/wedding-events/guest-arrival.jpg",
-
-        // Everything you want to show when Details is clicked
-        details:
-          "Welcome to our special day. Guests are invited to arrive, settle in and take their seats.",
-      },
-
-      {
-        time: "08:30 AM",
-        title: "Family Gathering",
-        venue: "Wedding Venue, Tenkasi",
-
-        // No photo yet
-        photo: null,
-
-        details:
-          "Families and close relatives gather together for the auspicious wedding rituals. This is a special time for both families to come together.",
-      },
-
-      {
-        time: "09:00 AM",
-        title: "Wedding Ceremony Begins",
-        venue: "Wedding Venue, Tenkasi",
-
-        photo: "images/wedding-events/ceremony.jpg",
-
-        details:
-          "The wedding ceremony begins with the blessings of our families and elders.",
-      },
-
-      {
-        time: "09:15 AM",
-        title: "Thali Kattu",
-        venue: "Wedding Venue, Tenkasi",
-
-        photo: "images/wedding-events/thali-kattu.jpg",
-
-        details:
-          "A beautiful and sacred moment as Sundar ties the thali, marking the beginning of our journey together.",
-      },
-
-      {
-        time: "09:30 AM",
-        title: "Wedding Rituals",
-        venue: "Wedding Venue, Tenkasi",
-
-        photo: null,
-
-        details:
-          "Traditional wedding rituals and blessings with our family and loved ones.",
-      },
-
-      {
-        time: "10:00 AM",
-        title: "Family Blessings & Photos",
-        venue: "Wedding Venue, Tenkasi",
-
-        photo: "images/wedding-events/family-blessings.jpg",
-
-        details:
-          "Seeking the blessings of our elders and capturing precious moments with our families.",
-      },
-
-      {
-        time: "10:30 AM",
-        title: "Wedding Ceremony Ends",
-        venue: "Wedding Venue, Tenkasi",
-
-        photo: null,
-
-        details:
-          "Thank you for joining us and blessing the beginning of our new journey.",
-      },
-
-      {
-        time: "12:30 PM",
-        title: "Lunch",
-        venue: "Wedding Venue, Tenkasi",
-
-        photo: null,
-
-        details:
-          "Please join us for a traditional wedding lunch with family and friends.",
-      },
-    ],
-  },
-
-  reception: {
-    type: "RECEPTION",
-    title: "Celebration Evening",
-    date: "29 November 2026",
-    time: "4:00 PM – 10:00 PM",
-    location: "📍 Viluppuram",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Viluppuram",
-    scheduleTitle: "Reception Schedule",
-
-    events: [
-      {
-        time: "04:00 PM",
-        title: "Guest Arrival",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: "images/reception-events/guest-arrival.jpg",
-
-        details:
-          "Welcome to the reception. Guests are invited to arrive and join the celebration.",
-      },
-
-      {
-        time: "04:30 PM",
-        title: "Meet & Greet",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: null,
-
-        details:
-          "An opportunity to meet the couple, family members and friends.",
-      },
-
-      {
-        time: "05:30 PM",
-        title: "Couple's Entry",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: "images/reception-events/couple-entry.jpg",
-
-        details:
-          "Join us as we welcome Sundar & Sundari to their special evening.",
-      },
-
-      {
-        time: "06:00 PM",
-        title: "Greetings & Blessings",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: null,
-
-        details:
-          "Family and friends share their blessings and warm wishes with the couple.",
-      },
-
-      {
-        time: "07:00 PM",
-        title: "Photography & Memories",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: "images/reception-events/photography.jpg",
-
-        details:
-          "Let's capture some beautiful memories together with family and friends.",
-      },
-
-      {
-        time: "07:30 PM",
-        title: "Dinner",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: null,
-
-        details:
-          "Please join us for dinner and continue the celebration with us.",
-      },
-
-      {
-        time: "09:30 PM",
-        title: "Final Greetings",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: null,
-
-        details:
-          "A final opportunity to meet, greet and share your blessings with the couple.",
-      },
-
-      {
-        time: "10:00 PM",
-        title: "Reception Ends",
-        venue: "Reception Venue, Viluppuram",
-
-        photo: null,
-
-        details:
-          "Thank you for being part of our celebration and making our evening memorable.",
-      },
-    ],
-  },
-};
+// ============================================================
+// OPEN EVENT MODAL
+// ============================================================
 
 function openEvent(eventName) {
   const event = eventData[eventName];
 
   if (!event) {
+    console.error(`Event "${eventName}" not found.`);
+
     return;
   }
 
-  document.getElementById("modal-event-type").textContent = event.type;
+  setText("modal-event-type", event.type);
 
-  document.getElementById("modal-event-title").textContent = event.title;
+  setText("modal-event-title", event.title);
 
-  document.getElementById("modal-event-date").textContent = event.date;
+  setText("modal-event-date", event.date);
 
-  document.getElementById("modal-event-time").textContent = event.time;
+  setText("modal-event-time", event.time);
 
-  document.getElementById("modal-event-location").textContent = event.location;
+  setText("modal-event-location", event.location);
 
-  document.getElementById("modal-map-button").href = event.mapUrl;
+  setText("modal-schedule-title", event.scheduleTitle);
 
-  renderTimeline(event.timeline);
+  const mapButton = document.getElementById("modal-map-button");
 
-  renderEventPhotos(event.photos);
+  if (mapButton) {
+    mapButton.href = event.mapUrl;
+  }
+
+  renderEventSchedule(event.events);
 
   const modal = document.getElementById("event-modal");
+
+  if (!modal) {
+    return;
+  }
 
   modal.classList.add("active");
 
   modal.setAttribute("aria-hidden", "false");
 
   document.body.classList.add("modal-open");
+
+  const modalContent = modal.querySelector(".event-modal-content");
+
+  if (modalContent) {
+    modalContent.scrollTop = 0;
+  }
 }
+
+// ============================================================
+// CLOSE EVENT MODAL
+// ============================================================
 
 function closeEvent() {
   const modal = document.getElementById("event-modal");
+
+  if (!modal) {
+    return;
+  }
 
   modal.classList.remove("active");
 
@@ -310,219 +431,188 @@ function closeEvent() {
   document.body.classList.remove("modal-open");
 }
 
-function renderTimeline(timeline) {
-  const container = document.getElementById("event-timeline");
-
-  container.innerHTML = "";
-
-  timeline.forEach((item) => {
-    const timelineItem = document.createElement("div");
-
-    timelineItem.className = "timeline-item";
-
-    timelineItem.innerHTML = `
-      <div class="timeline-dot"></div>
-
-      <div class="timeline-time">
-        ${item.time}
-      </div>
-
-      <div class="timeline-content">
-        <h4>${item.title}</h4>
-
-        <p>${item.description}</p>
-      </div>
-    `;
-
-    container.appendChild(timelineItem);
-  });
-}
-
-function renderEventPhotos(photos) {
-  const container = document.getElementById("event-photo-grid");
-
-  container.innerHTML = "";
-
-  photos.forEach((photo) => {
-    const imageWrapper = document.createElement("div");
-
-    imageWrapper.className = "event-photo";
-
-    imageWrapper.innerHTML = `
-      <img
-        src="${photo}"
-        alt="Wedding memory"
-        loading="lazy"
-      />
-    `;
-
-    container.appendChild(imageWrapper);
-  });
-}
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeEvent();
-  }
-});
-
-document.getElementById("modal-schedule-title").textContent =
-  event.scheduleTitle;
-
-function openEvent(eventName) {
-  const event = eventData[eventName];
-
-  if (!event) {
-    return;
-  }
-
-  document.getElementById("modal-event-type").textContent = event.type;
-
-  document.getElementById("modal-event-title").textContent = event.title;
-
-  document.getElementById("modal-schedule-title").textContent =
-    event.scheduleTitle;
-
-  document.getElementById("modal-event-date").textContent = event.date;
-
-  document.getElementById("modal-event-time").textContent = event.time;
-
-  document.getElementById("modal-event-location").textContent = event.location;
-
-  document.getElementById("modal-map-button").href = event.mapUrl;
-
-  renderTimeline(event.timeline);
-
-  renderEventPhotos(event.photos);
-
-  const modal = document.getElementById("event-modal");
-
-  modal.classList.add("active");
-
-  modal.setAttribute("aria-hidden", "false");
-
-  document.body.classList.add("modal-open");
-}
+// ============================================================
+// RENDER EVENT SCHEDULE
+// ============================================================
 
 function renderEventSchedule(events) {
   const container = document.getElementById("event-timeline");
 
+  if (!container) {
+    return;
+  }
+
   container.innerHTML = "";
+
+  if (!events || events.length === 0) {
+    container.innerHTML = `
+      <p class="no-schedule">
+        ${escapeHtml(wedding.content.modal.emptySchedule)}
+      </p>
+    `;
+
+    return;
+  }
 
   events.forEach((event, index) => {
     const eventItem = document.createElement("div");
 
     eventItem.className = "schedule-card";
 
-    eventItem.innerHTML = `
-      ${
-        event.photo
-          ? `
+    const photoHtml = event.photo
+      ? `
             <div class="schedule-photo">
               <img
-                src="${event.photo}"
-                alt="${event.title}"
+                src="${escapeHtml(event.photo)}"
+                alt="${escapeHtml(event.title)}"
                 loading="lazy"
               />
             </div>
           `
-          : ""
-      }
+      : "";
 
-      <div class="schedule-card-content">
+    eventItem.innerHTML = `
+        ${photoHtml}
 
-        <div class="schedule-time">
-          ${event.time}
+        <div class="schedule-card-content">
+
+          <div class="schedule-time">
+            ${escapeHtml(event.time)}
+          </div>
+
+          <h4>
+            ${escapeHtml(event.title)}
+          </h4>
+
+          <p class="schedule-venue">
+            📍 ${escapeHtml(event.venue)}
+          </p>
+
+          <button
+            type="button"
+            class="schedule-details-button"
+            onclick="toggleEventDetails(${index})"
+            aria-expanded="false"
+            aria-controls="schedule-details-${index}"
+          >
+            ${escapeHtml(wedding.content.modal.viewDetails)}
+          </button>
+
+          <div
+            class="schedule-details"
+            id="schedule-details-${index}"
+          >
+            <p>
+              ${escapeHtml(event.details)}
+            </p>
+          </div>
+
         </div>
-
-        <h4>${event.title}</h4>
-
-        <p class="schedule-venue">
-          📍 ${event.venue}
-        </p>
-
-        <button
-          class="schedule-details-button"
-          onclick="toggleEventDetails(${index})"
-        >
-          View Details
-        </button>
-
-        <div
-          class="schedule-details"
-          id="schedule-details-${index}"
-        >
-          <p>${event.details}</p>
-        </div>
-
-      </div>
-    `;
+      `;
 
     container.appendChild(eventItem);
   });
 }
 
+// ============================================================
+// TOGGLE EVENT DETAILS
+// ============================================================
+
 function toggleEventDetails(index) {
   const details = document.getElementById(`schedule-details-${index}`);
+
+  if (!details) {
+    return;
+  }
 
   const button = details.previousElementSibling;
 
   const isOpen = details.classList.contains("active");
 
-  // Close all other details
   document.querySelectorAll(".schedule-details").forEach((item) => {
     item.classList.remove("active");
   });
 
   document.querySelectorAll(".schedule-details-button").forEach((item) => {
-    item.textContent = "View Details";
+    item.textContent = wedding.content.modal.viewDetails;
+
+    item.setAttribute("aria-expanded", "false");
   });
 
-  // Open selected one
   if (!isOpen) {
     details.classList.add("active");
-    button.textContent = "Hide Details";
+
+    if (button) {
+      button.textContent = wedding.content.modal.hideDetails;
+
+      button.setAttribute("aria-expanded", "true");
+    }
   }
 }
 
-function openEvent(eventName) {
-  const event = eventData[eventName];
+// ============================================================
+// MODAL INITIALIZATION
+// ============================================================
 
-  if (!event) {
+function initializeModal() {
+  const modal = document.getElementById("event-modal");
+
+  if (!modal) {
     return;
   }
 
-  document.getElementById("modal-event-type").textContent = event.type;
-
-  document.getElementById("modal-event-title").textContent = event.title;
-
-  document.getElementById("modal-schedule-title").textContent =
-    event.scheduleTitle;
-
-  document.getElementById("modal-event-date").textContent = event.date;
-
-  document.getElementById("modal-event-time").textContent = event.time;
-
-  document.getElementById("modal-event-location").textContent = event.location;
-
-  document.getElementById("modal-map-button").href = event.mapUrl;
-
-  renderEventSchedule(event.events);
-
-  const modal = document.getElementById("event-modal");
-
-  modal.classList.add("active");
-
-  modal.setAttribute("aria-hidden", "false");
-
-  document.body.classList.add("modal-open");
-}
-
-function closeEvent() {
-  const modal = document.getElementById("event-modal");
-
-  modal.classList.remove("active");
-
   modal.setAttribute("aria-hidden", "true");
 
-  document.body.classList.remove("modal-open");
+  const closeButton = document.getElementById("modal-close-button");
+
+  if (closeButton) {
+    closeButton.setAttribute("aria-label", wedding.content.modal.closeLabel);
+  }
+
+  setText("modal-schedule-label", wedding.content.modal.scheduleLabel);
+
+  setText("modal-map-button", wedding.content.modal.mapButton);
+}
+
+// ============================================================
+// KEYBOARD CONTROLS
+// ============================================================
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeEvent();
+  }
+});
+
+// ============================================================
+// DOM HELPERS
+// ============================================================
+
+function setText(elementId, value) {
+  const element = document.getElementById(elementId);
+
+  if (!element) {
+    return;
+  }
+
+  element.textContent = value ?? "";
+}
+
+function setAttribute(elementId, attribute, value) {
+  const element = document.getElementById(elementId);
+
+  if (!element) {
+    return;
+  }
+
+  element.setAttribute(attribute, value);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }

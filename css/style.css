@@ -1996,3 +1996,17 @@ body.modal-open {
     width: 100%;
   }
 }
+
+.schedule-photo {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.schedule-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}

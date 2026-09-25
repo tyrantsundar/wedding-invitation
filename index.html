@@ -5,12 +5,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      name="description"
-      content="Wedding invitation of Sundar Pirabu Raj R and Sundari"
-    />
+    <meta id="meta-description" name="description" content="" />
 
-    <title>Sundar & Sundari | Wedding Invitation</title>
+    <title id="page-title"></title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -24,7 +21,7 @@
       <div class="hero-content">
         <div class="decorative-symbol">ॐ</div>
 
-        <p class="invitation-text">WEDDING INVITATION</p>
+        <p class="invitation-text" id="hero-invitation-label"></p>
 
         <div class="divider">
           <span></span>
@@ -32,15 +29,11 @@
           <span></span>
         </div>
 
-        <p class="invite-message">With the blessings of our families</p>
+        <p class="invite-message" id="hero-message"></p>
 
-        <h1 class="couple-names">
-          Sundar Pirabu Raj R
-          <span>&</span>
-          Sundari
-        </h1>
+        <h1 class="couple-names" id="hero-couple-names"></h1>
 
-        <p class="wedding-date">28 November 2026</p>
+        <p class="wedding-date" id="hero-wedding-date"></p>
 
         <div class="divider">
           <span></span>
@@ -48,354 +41,283 @@
           <span></span>
         </div>
 
-        <p class="scroll-text">Scroll to explore</p>
+        <p class="scroll-text" id="hero-scroll-text"></p>
 
         <div class="scroll-arrow">↓</div>
       </div>
     </main>
 
     <!-- =========================
-     EVENTS SECTION
-========================== -->
+         EVENTS SECTION
+    ========================== -->
 
     <section class="events-section">
       <div class="section-heading">
-        <p class="section-label">JOIN US</p>
+        <p class="section-label" id="celebrations-label"></p>
 
-        <h2>The Celebrations</h2>
+        <h2 id="celebrations-title"></h2>
 
         <div class="heading-divider">✦</div>
 
-        <p>Two beautiful occasions, one unforgettable celebration.</p>
+        <p id="celebrations-description"></p>
       </div>
 
       <div class="events-container">
-        <!-- WEDDING -->
+        <!-- =========================
+             WEDDING
+        ========================== -->
 
         <article class="event-card">
           <div class="event-icon">♡</div>
 
-          <p class="event-type">WEDDING CEREMONY</p>
+          <p class="event-type" id="wedding-event-type"></p>
 
-          <h3>Sundar & Sundari</h3>
+          <h3 id="wedding-event-title"></h3>
 
           <div class="event-divider">✦</div>
 
-          <p class="event-date">28 November 2026</p>
+          <p class="event-date" id="wedding-event-date"></p>
 
-          <p class="event-time">9:00 AM – 10:30 AM</p>
+          <p class="event-time" id="wedding-event-time"></p>
 
-          <p class="event-location">📍 Tenkasi</p>
+          <p class="event-location" id="wedding-event-location"></p>
 
           <div class="event-buttons">
-            <button class="event-button" onclick="openEvent('wedding')">
-              Explore Wedding
-            </button>
+            <button
+              type="button"
+              class="event-button"
+              id="wedding-event-button"
+              onclick="openEvent('wedding')"
+            ></button>
 
             <a
               class="location-button"
-              href="https://www.google.com/maps/search/?api=1&query=Tenkasi"
+              id="wedding-location-button"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              View Location
-            </a>
+            ></a>
           </div>
         </article>
 
-        <!-- RECEPTION -->
+        <!-- =========================
+             RECEPTION
+        ========================== -->
 
         <article class="event-card">
           <div class="event-icon">✨</div>
 
-          <p class="event-type">RECEPTION</p>
+          <p class="event-type" id="reception-event-type"></p>
 
-          <h3>Celebration Evening</h3>
+          <h3 id="reception-event-title"></h3>
 
           <div class="event-divider">✦</div>
 
-          <p class="event-date">29 November 2026</p>
+          <p class="event-date" id="reception-event-date"></p>
 
-          <p class="event-time">4:00 PM – 10:00 PM</p>
+          <p class="event-time" id="reception-event-time"></p>
 
-          <p class="event-location">📍 Viluppuram</p>
+          <p class="event-location" id="reception-event-location"></p>
+
           <div class="event-buttons">
-            <button class="event-button" onclick="openEvent('reception')">
-              Explore Reception
-            </button>
+            <button
+              type="button"
+              class="event-button"
+              id="reception-event-button"
+              onclick="openEvent('reception')"
+            ></button>
 
             <a
               class="location-button"
-              href="https://www.google.com/maps/search/?api=1&query=Viluppuram"
+              id="reception-location-button"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              View Location
-            </a>
+            ></a>
           </div>
         </article>
       </div>
     </section>
 
     <!-- =========================
-     COUNTDOWN SECTION
-========================== -->
+         FAMILY & COUPLE SECTION
+    ========================== -->
+
+    <section class="family-section">
+      <div class="section-heading">
+        <p class="section-label" id="story-label"></p>
+
+        <h2 id="story-title"></h2>
+
+        <div class="heading-divider">✦</div>
+
+        <p id="story-description"></p>
+      </div>
+
+      <!-- =========================
+           COUPLE
+      ========================== -->
+
+      <div class="family-gallery-section">
+        <div class="family-gallery-heading">
+          <p class="section-label" id="couple-family-label"></p>
+
+          <h3 id="couple-family-title"></h3>
+        </div>
+
+        <div class="photo-slider">
+          <button
+            type="button"
+            class="slider-button prev"
+            onclick="scrollGallery('couple-gallery', -1)"
+            id="couple-prev-button"
+          >
+            ‹
+          </button>
+
+          <div class="photo-track" id="couple-gallery"></div>
+
+          <button
+            type="button"
+            class="slider-button next"
+            onclick="scrollGallery('couple-gallery', 1)"
+            id="couple-next-button"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+
+      <!-- =========================
+           GROOM FAMILY
+      ========================== -->
+
+      <div class="family-gallery-section">
+        <div class="family-gallery-heading">
+          <p class="section-label" id="groom-family-label"></p>
+
+          <h3 id="groom-family-title"></h3>
+        </div>
+
+        <div class="photo-slider">
+          <button
+            type="button"
+            class="slider-button prev"
+            onclick="scrollGallery('groom-gallery', -1)"
+            id="groom-prev-button"
+          >
+            ‹
+          </button>
+
+          <div class="photo-track" id="groom-gallery"></div>
+
+          <button
+            type="button"
+            class="slider-button next"
+            onclick="scrollGallery('groom-gallery', 1)"
+            id="groom-next-button"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+
+      <!-- =========================
+           BRIDE FAMILY
+      ========================== -->
+
+      <div class="family-gallery-section">
+        <div class="family-gallery-heading">
+          <p class="section-label" id="bride-family-label"></p>
+
+          <h3 id="bride-family-title"></h3>
+        </div>
+
+        <div class="photo-slider">
+          <button
+            type="button"
+            class="slider-button prev"
+            onclick="scrollGallery('bride-gallery', -1)"
+            id="bride-prev-button"
+          >
+            ‹
+          </button>
+
+          <div class="photo-track" id="bride-gallery"></div>
+
+          <button
+            type="button"
+            class="slider-button next"
+            onclick="scrollGallery('bride-gallery', 1)"
+            id="bride-next-button"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         COUNTDOWN SECTION
+    ========================== -->
 
     <section class="countdown-section">
       <div class="countdown-content">
-        <p class="section-label">THE WAIT BEGINS</p>
+        <p class="section-label" id="countdown-label"></p>
 
-        <h2>Counting Down</h2>
+        <h2 id="countdown-title"></h2>
 
-        <p class="countdown-message">Until we begin our forever</p>
+        <p class="countdown-message" id="countdown-message"></p>
 
         <div class="countdown">
           <div class="countdown-box">
             <span id="days">00</span>
-            <small>Days</small>
+            <small id="countdown-days-label"></small>
           </div>
 
           <div class="countdown-box">
             <span id="hours">00</span>
-            <small>Hours</small>
+            <small id="countdown-hours-label"></small>
           </div>
 
           <div class="countdown-box">
             <span id="minutes">00</span>
-            <small>Minutes</small>
+            <small id="countdown-minutes-label"></small>
           </div>
 
           <div class="countdown-box">
             <span id="seconds">00</span>
-            <small>Seconds</small>
+            <small id="countdown-seconds-label"></small>
           </div>
         </div>
 
-        <div class="countdown-date">28 November 2026</div>
+        <div class="countdown-date" id="countdown-date"></div>
 
         <div class="countdown-heart">♥</div>
       </div>
     </section>
 
     <!-- =========================
-     FAMILY & COUPLE SECTION
-========================== -->
-
-    <section class="family-section">
-      <div class="section-heading">
-        <p class="section-label">TWO FAMILIES, ONE JOURNEY</p>
-
-        <h2>Our Story</h2>
-
-        <div class="heading-divider">✦</div>
-
-        <p>
-          A celebration of two hearts and the families that made us who we are.
-        </p>
-      </div>
-
-      <!-- =========================
-       COUPLE
-  ========================== -->
-
-      <div class="family-gallery-section">
-        <div class="family-gallery-heading">
-          <p class="section-label">THE COUPLE</p>
-
-          <h3>Sundar & Sundari</h3>
-        </div>
-
-        <div class="photo-slider">
-          <button
-            class="slider-button prev"
-            onclick="scrollGallery('couple-gallery', -1)"
-          >
-            ‹
-          </button>
-
-          <div class="photo-track" id="couple-gallery">
-            <div class="family-photo">
-              <img src="images/couple-1.jpg" alt="Sundar and Sundari" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/couple-2.jpg" alt="Sundar and Sundari" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/couple-3.jpg" alt="Sundar and Sundari" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/couple-4.jpg" alt="Sundar and Sundari" />
-            </div>
-          </div>
-
-          <button
-            class="slider-button next"
-            onclick="scrollGallery('couple-gallery', 1)"
-          >
-            ›
-          </button>
-        </div>
-      </div>
-
-      <!-- =========================
-       GROOM FAMILY
-  ========================== -->
-
-      <div class="family-gallery-section">
-        <div class="family-gallery-heading">
-          <p class="section-label">GROOM'S FAMILY</p>
-
-          <h3>The Groom's Family</h3>
-        </div>
-
-        <div class="photo-slider">
-          <button
-            class="slider-button prev"
-            onclick="scrollGallery('groom-gallery', -1)"
-          >
-            ‹
-          </button>
-
-          <div class="photo-track" id="groom-gallery">
-            <div class="family-photo">
-              <img src="images/groom-family-1.jpg" alt="Groom family" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/groom-family-2.jpg" alt="Groom family" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/groom-family-3.jpg" alt="Groom family" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/groom-family-4.jpg" alt="Groom family" />
-            </div>
-          </div>
-
-          <button
-            class="slider-button next"
-            onclick="scrollGallery('groom-gallery', 1)"
-          >
-            ›
-          </button>
-        </div>
-      </div>
-
-      <!-- =========================
-       BRIDE FAMILY
-  ========================== -->
-
-      <div class="family-gallery-section">
-        <div class="family-gallery-heading">
-          <p class="section-label">BRIDE'S FAMILY</p>
-
-          <h3>The Bride's Family</h3>
-        </div>
-
-        <div class="photo-slider">
-          <button
-            class="slider-button prev"
-            onclick="scrollGallery('bride-gallery', -1)"
-          >
-            ‹
-          </button>
-
-          <div class="photo-track" id="bride-gallery">
-            <div class="family-photo">
-              <img src="images/bride-family-1.jpg" alt="Bride family" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/bride-family-2.jpg" alt="Bride family" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/bride-family-3.jpg" alt="Bride family" />
-            </div>
-
-            <div class="family-photo">
-              <img src="images/bride-family-4.jpg" alt="Bride family" />
-            </div>
-          </div>
-
-          <button
-            class="slider-button next"
-            onclick="scrollGallery('bride-gallery', 1)"
-          >
-            ›
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY SECTION -->
-    <section class="gallery-section">
-      <div class="section-heading">
-        <p class="section-label">OUR MOMENTS</p>
-        <h2>A Glimpse of Us</h2>
-        <div class="heading-divider">✦</div>
-        <p>A few memories from our journey together.</p>
-      </div>
-
-      <div class="gallery-container">
-        <div class="gallery-item gallery-large">
-          <div class="gallery-placeholder">
-            <span>Photo 1</span>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span>Photo 2</span>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span>Photo 3</span>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span>Photo 4</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-     THANK YOU SECTION
-========================== -->
+         THANK YOU SECTION
+    ========================== -->
 
     <section class="thank-you-section">
       <div class="thank-you-content">
         <div class="thank-you-heart">♥</div>
 
-        <p class="section-label">WITH GRATITUDE</p>
+        <p class="section-label" id="thank-you-label"></p>
 
-        <h2>Thank You</h2>
+        <h2 id="thank-you-title"></h2>
 
         <div class="heading-divider">✦</div>
 
-        <p class="thank-you-message">
-          Your presence, blessings, and love mean more to us than words can
-          express.
-        </p>
+        <p class="thank-you-message" id="thank-you-message-one"></p>
 
-        <p class="thank-you-message">
-          Thank you for being a part of our special day and for celebrating this
-          beautiful beginning with us.
-        </p>
+        <p class="thank-you-message" id="thank-you-message-two"></p>
 
-        <div class="thank-you-names">Sundar <span>&</span> Sundari</div>
+        <div class="thank-you-names" id="thank-you-names"></div>
 
-        <p class="thank-you-date">28 November 2026</p>
+        <p class="thank-you-date" id="thank-you-date"></p>
 
         <div class="thank-you-divider">
           <span></span>
@@ -404,42 +326,56 @@
         </div>
 
         <button
+          type="button"
           class="back-to-top"
+          id="back-to-top-button"
           onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        >
-          Back to Beginning ↑
-        </button>
+        ></button>
       </div>
     </section>
-    <!-- =========================
-     EVENT DETAILS MODAL
-========================== -->
 
-    <div class="event-modal" id="event-modal" aria-hidden="true">
-      <div class="event-modal-overlay" onclick="closeEvent()"></div>
+    <!-- =========================
+         EVENT DETAILS MODAL
+    ========================== -->
+
+    <div
+      class="event-modal"
+      id="event-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-event-title"
+    >
+      <div
+        class="event-modal-overlay"
+        onclick="closeEvent()"
+        aria-hidden="true"
+      ></div>
 
       <div class="event-modal-content">
         <button
+          type="button"
           class="event-modal-close"
+          id="modal-close-button"
           onclick="closeEvent()"
-          aria-label="Close"
+          aria-label=""
         >
           ×
         </button>
 
         <div class="event-modal-inner">
-          <p class="section-label" id="modal-event-type">WEDDING CEREMONY</p>
+          <p class="section-label" id="modal-event-type"></p>
 
-          <h2 id="modal-event-title">Sundar & Sundari</h2>
+          <h2 id="modal-event-title"></h2>
 
           <div class="heading-divider">✦</div>
 
           <div class="modal-event-info">
-            <p id="modal-event-date">28 November 2026</p>
+            <p id="modal-event-date"></p>
 
-            <p id="modal-event-time">9:00 AM – 10:30 AM</p>
+            <p id="modal-event-time"></p>
 
-            <p id="modal-event-location">📍 Tenkasi</p>
+            <p id="modal-event-location"></p>
           </div>
 
           <a
@@ -448,22 +384,28 @@
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            Open Google Maps
-          </a>
+          ></a>
 
-          <!-- EVENT SCHEDULE -->
+          <!-- =========================
+               EVENT SCHEDULE
+          ========================== -->
 
           <div class="event-timeline-section">
-            <p class="section-label">THE SCHEDULE</p>
+            <p class="section-label" id="modal-schedule-label"></p>
 
-            <h3 id="modal-schedule-title">Event Schedule</h3>
+            <h3 id="modal-schedule-title"></h3>
 
             <div class="event-timeline" id="event-timeline"></div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="config/wedding.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
