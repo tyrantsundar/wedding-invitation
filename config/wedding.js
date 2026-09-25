@@ -14,13 +14,13 @@ const COUPLE = {
   },
 
   bride: {
-    name: "Sundari",
-    fullName: "Sundari",
+    name: "Vaishnavi SP",
+    fullName: "Vaishnavi SP",
   },
 
-  displayName: "Sundar & Sundari",
+  displayName: "Sundar & Vaishnavi",
 
-  altName: "Sundar and Sundari",
+  altName: "Sundar and Vaishnavi",
 };
 
 // ============================================================
@@ -29,13 +29,13 @@ const COUPLE = {
 
 const WEDDING = {
   date: {
-    display: "28 November 2026",
-    iso: "2026-11-28",
+    display: "20 November 2026",
+    iso: "2026-11-20",
   },
 
   time: "9:00 AM – 10:30 AM",
 
-  countdownDateTime: "2026-11-28T09:00:00",
+  countdownDateTime: "2026-11-20T09:00:00",
 
   location: {
     name: "Tenkasi",
@@ -55,7 +55,7 @@ const RECEPTION = {
     iso: "2026-11-29",
   },
 
-  time: "4:00 PM – 10:00 PM",
+  time: "3:30 PM – 09:00 PM",
 
   location: {
     name: "Viluppuram",
@@ -71,9 +71,9 @@ const RECEPTION = {
 
 const CONTENT = {
   meta: {
-    description: "Wedding invitation of Sundar Pirabu Raj R and Sundari",
+    description: "Wedding invitation of Sundar Pirabu Raj R and Vaishnavi",
 
-    title: "Sundar & Sundari | Wedding Invitation",
+    title: "Sundar & Vaishnavi | Wedding Invitation",
   },
 
   hero: {
@@ -90,11 +90,12 @@ const CONTENT = {
 
     title: "The Celebrations",
 
-    description: "Two beautiful occasions, one unforgettable celebration.",
+    description:
+      "Two cherished moments, one beautiful journey, forever woven together.",
 
-    weddingButton: "Explore Wedding",
+    weddingButton: "Wedding Day Events",
 
-    receptionButton: "Explore Reception",
+    receptionButton: "Reception Day Events",
 
     locationButton: "View Location",
   },
@@ -115,9 +116,9 @@ const CONTENT = {
 
     brideLabel: "BRIDE'S FAMILY",
 
-    groomTitle: "The Groom's Family",
+    groomTitle: "Where the Groom Comes From, He has",
 
-    brideTitle: "The Bride's Family",
+    brideTitle: "Where the Bride Comes From, She has",
 
     previousCouple: "Previous couple photo",
 
@@ -154,10 +155,10 @@ const CONTENT = {
     title: "Thank You",
 
     messageOne:
-      "Your presence, blessings, and love mean more to us than words can express.",
+      "Having you with us on this special day would mean more than we could ever put into words. Your presence, love, and blessings will make our celebration truly complete.",
 
     messageTwo:
-      "Thank you for being a part of our special day and for celebrating this beautiful beginning with us.",
+      "As we begin this beautiful new chapter together, we will carry the warmth of your wishes and the memories we create with you in our hearts, always.",
 
     backToBeginning: "Back to Beginning ↑",
   },
