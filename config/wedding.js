@@ -116,9 +116,9 @@ const CONTENT = {
 
     brideLabel: "BRIDE'S FAMILY",
 
-    groomTitle: "Where the Groom Comes From, He has",
+    groomTitle: "GROOM'S TEAM",
 
-    brideTitle: "Where the Bride Comes From, She has",
+    brideTitle: "BRIDE's TEAM",
 
     previousCouple: "Previous couple photo",
 
@@ -158,7 +158,7 @@ const CONTENT = {
       "Having you with us on this special day would mean more than we could ever put into words. Your presence, love, and blessings will make our celebration truly complete.",
 
     messageTwo:
-      "As we begin this beautiful new chapter together, we will carry the warmth of your wishes and the memories we create with you in our hearts, always.",
+      "As we begin this beautiful chapter together, we will carry the warmth of your wishes and the memories we create with you in our hearts, always.",
 
     backToBeginning: "Back to Beginning ↑",
   },
