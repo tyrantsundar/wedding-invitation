@@ -190,22 +190,22 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/couple-1.jpg",
+        src: "images/couple-1.jpeg",
         alt: COUPLE.altName,
       },
 
       {
-        src: "images/couple-2.jpg",
+        src: "images/couple-2.jpeg",
         alt: COUPLE.altName,
       },
 
       {
-        src: "images/couple-3.jpg",
+        src: "images/couple-3.jpeg",
         alt: COUPLE.altName,
       },
 
       {
-        src: "images/couple-4.jpg",
+        src: "images/couple-4.jpeg",
         alt: COUPLE.altName,
       },
     ],
@@ -216,22 +216,22 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/groom-family-1.jpg",
+        src: "images/groom-family-1.jpeg",
         alt: "Groom family",
       },
 
       {
-        src: "images/groom-family-2.jpg",
+        src: "images/groom-family-2.jpeg",
         alt: "Groom family",
       },
 
       {
-        src: "images/groom-family-3.jpg",
+        src: "images/groom-family-3.jpeg",
         alt: "Groom family",
       },
 
       {
-        src: "images/groom-family-4.jpg",
+        src: "images/groom-family-4.jpeg",
         alt: "Groom family",
       },
     ],
@@ -242,22 +242,22 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/bride-family-1.jpg",
+        src: "images/bride-family-1.jpeg",
         alt: "Bride family",
       },
 
       {
-        src: "images/bride-family-2.jpg",
+        src: "images/bride-family-2.jpeg",
         alt: "Bride family",
       },
 
       {
-        src: "images/bride-family-3.jpg",
+        src: "images/bride-family-3.jpeg",
         alt: "Bride family",
       },
 
       {
-        src: "images/bride-family-4.jpg",
+        src: "images/bride-family-4.jpeg",
         alt: "Bride family",
       },
     ],
@@ -287,18 +287,13 @@ const GALLERY = {
 const EVENT_SCHEDULES = {
   wedding: [
     {
-      time: "08:00 AM",
-
-      title: "Guest Arrival",
-
-      venue: `Wedding Venue, ${WEDDING.location.name}`,
-
+      time: "05:00 AM",
+      title: "Engagement",
+      venue: `Tenkasi, ${WEDDING.location.name}`,
       photo: "images/wedding-events/guest-arrival.jpg",
-
       details:
-        "Welcome to our special day. Guests are invited to arrive, settle in and take their seats.",
+        "Our celebrations begin with Engagement at our home in Tenkasi — a precious family moment filled with love, blessings, and the joy of bringing two families together.",
     },
-
     {
       time: "08:30 AM",
 
