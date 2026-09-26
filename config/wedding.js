@@ -112,9 +112,9 @@ const CONTENT = {
   family: {
     coupleLabel: "THE COUPLE",
 
-    groomLabel: "GROOM'S FAMILY",
+    groomLabel: "The family that gave him his roots",
 
-    brideLabel: "BRIDE'S FAMILY",
+    brideLabel: "The family that taught her to bloom",
 
     groomTitle: "GROOM'S TEAM",
 
