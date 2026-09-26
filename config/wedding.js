@@ -216,7 +216,7 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/groom-family-1.jpeg",
+        src: "images/guhan.jpeg",
         alt: "Groom family",
       },
 
