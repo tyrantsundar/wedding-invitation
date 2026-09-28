@@ -1904,15 +1904,17 @@ a {
 }
 
 /* =========================================================
-   GROOM & BRIDE FAMILY — SQUARE 1:1 PHOTOS
+   ALL COUPLE & FAMILY PHOTOS — SQUARE 1:1
    ========================================================= */
 
+#couple-gallery .family-photo,
 #groom-gallery .family-photo,
 #bride-gallery .family-photo {
   aspect-ratio: 1 / 1;
   height: auto;
 }
 
+#couple-gallery .family-photo img,
 #groom-gallery .family-photo img,
 #bride-gallery .family-photo img {
   width: 100%;

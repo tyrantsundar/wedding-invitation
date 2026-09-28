@@ -171,7 +171,7 @@ function renderFamilyGalleries() {
 
   setText("couple-family-label", content.coupleLabel);
 
-  setText("couple-family-title", wedding.couple.displayName);
+  setText("couple-family-title", "Us, Reimagined Through Time !");
 
   setText("groom-family-label", content.groomLabel);
 

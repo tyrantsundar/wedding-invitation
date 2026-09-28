@@ -195,17 +195,17 @@ const FAMILY = {
       },
 
       {
-        src: "images/couple-2.jpeg",
+        src: "images/80s-era.jpeg",
         alt: COUPLE.altName,
       },
 
       {
-        src: "images/couple-3.jpeg",
+        src: "images/cowboys-era.jpeg",
         alt: COUPLE.altName,
       },
 
       {
-        src: "images/couple-4.jpeg",
+        src: "images/kings-era.jpeg",
         alt: COUPLE.altName,
       },
     ],
@@ -229,10 +229,6 @@ const FAMILY = {
         src: "images/groom-brother.jpeg",
         alt: "Groom family",
       },
-      {
-        src: "images/groom-family-4.jpeg",
-        alt: "Groom family",
-      },
     ],
   },
 
@@ -246,15 +242,6 @@ const FAMILY = {
       },
       {
         src: "images/bride-brother.jpeg",
-        alt: "Bride family",
-      },
-      {
-        src: "images/bride-family-3.jpeg",
-        alt: "Bride family",
-      },
-
-      {
-        src: "images/bride-family-4.jpeg",
         alt: "Bride family",
       },
     ],
