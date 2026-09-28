@@ -216,20 +216,19 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/guhan.jpeg",
+        src: "images/groom-parents.jpeg",
         alt: "Groom family",
       },
 
       {
-        src: "images/groom-family-2.jpeg",
+        src: "images/groom-sister.jpeg",
         alt: "Groom family",
       },
 
       {
-        src: "images/groom-family-3.jpeg",
+        src: "images/groom-brother.jpeg",
         alt: "Groom family",
       },
-
       {
         src: "images/groom-family-4.jpeg",
         alt: "Groom family",
@@ -242,15 +241,13 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/bride-family-1.jpeg",
+        src: "images/bride-parents.jpeg",
         alt: "Bride family",
       },
-
       {
-        src: "images/bride-family-2.jpeg",
+        src: "images/bride-brother.jpeg",
         alt: "Bride family",
       },
-
       {
         src: "images/bride-family-3.jpeg",
         alt: "Bride family",

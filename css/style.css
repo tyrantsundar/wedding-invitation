@@ -1902,3 +1902,20 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================================
+   GROOM & BRIDE FAMILY — SQUARE 1:1 PHOTOS
+   ========================================================= */
+
+#groom-gallery .family-photo,
+#bride-gallery .family-photo {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+#groom-gallery .family-photo img,
+#bride-gallery .family-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
