@@ -199,15 +199,15 @@ const FAMILY = {
         alt: COUPLE.altName,
       },
 
-      {
-        src: "images/cowboys-era.jpeg",
-        alt: COUPLE.altName,
-      },
+      // {
+      //   src: "images/cowboys-era.jpeg",
+      //   alt: COUPLE.altName,
+      // },
 
-      {
-        src: "images/kings-era.jpeg",
-        alt: COUPLE.altName,
-      },
+      // {
+      //   src: "images/kings-era.jpeg",
+      //   alt: COUPLE.altName,
+      // },
     ],
   },
 
