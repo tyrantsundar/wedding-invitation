@@ -41,7 +41,7 @@ const WEDDING = {
     name: "Tenkasi",
     display: "📍 Tenkasi",
 
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Tenkasi",
+    mapUrl: "https://maps.app.goo.gl/wzLa8BKsyMHXLfaA9",
   },
 };
 
@@ -280,97 +280,47 @@ const EVENT_SCHEDULES = {
       time: "05:00 AM",
       title: "Engagement",
       venue: `Tenkasi, ${WEDDING.location.name}`,
-      photo: "images/wedding-events/guest-arrival.jpg",
+      photo: "images/wedding-events/engagement.jpeg",
       details:
         "Our celebrations begin with Engagement at our home in Tenkasi — a precious family moment filled with love, blessings, and the joy of bringing two families together.",
     },
     {
-      time: "08:30 AM",
-
+      time: "07:00 AM",
       title: "Family Gathering",
-
       venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: null,
-
+      photo: "images/wedding-events/family-gathering.jpeg",
       details:
         "Families and close relatives gather together for the auspicious wedding rituals. This is a special time for both families to come together.",
     },
-
     {
-      time: "09:00 AM",
-
-      title: "Wedding Ceremony Begins",
-
+      time: "09:00 AM to 10:30 AM",
+      title: "Wedding",
       venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: "images/wedding-events/ceremony.jpg",
-
-      details:
-        "The wedding ceremony begins with the blessings of our families and elders.",
-    },
-
-    {
-      time: "09:15 AM",
-
-      title: "Thali Kattu",
-
-      venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: "images/wedding-events/thali-kattu.jpg",
-
+      photo: "images/wedding-events/thali-kattu.jpeg",
       details: `A beautiful and sacred moment as ${COUPLE.groom.name} ties the thali, marking the beginning of our journey together.`,
     },
-
-    {
-      time: "09:30 AM",
-
-      title: "Wedding Rituals",
-
-      venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: null,
-
-      details:
-        "Traditional wedding rituals and blessings with our family and loved ones.",
-    },
-
     {
       time: "10:00 AM",
-
       title: "Family Blessings & Photos",
-
       venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: "images/wedding-events/family-blessings.jpg",
-
+      photo: "images/wedding-events/photo-shoot.jpeg",
       details:
         "Seeking the blessings of our elders and capturing precious moments with our families.",
     },
-
-    {
-      time: "10:30 AM",
-
-      title: "Wedding Ceremony Ends",
-
-      venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: null,
-
-      details:
-        "Thank you for joining us and blessing the beginning of our new journey.",
-    },
-
     {
       time: "12:30 PM",
-
       title: "Lunch",
-
       venue: `Wedding Venue, ${WEDDING.location.name}`,
-
-      photo: "images/wedding-events/lunch.jpg",
-
+      photo: "images/wedding-events/lunch.jpeg",
       details: "Nalla sapdunga bro !",
+    },
+    {
+      time: "05:00 PM",
+      title: "The New Begging !",
+      venue: `Wedding Venue, ${WEDDING.location.name}`,
+      photo: "images/wedding-events/new-beginning.jpeg",
+      details:
+        "Thank you for joining us and blessing the beginning of our new journey.",
     },
   ],
 
