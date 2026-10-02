@@ -58,8 +58,8 @@ const RECEPTION = {
   time: "3:30 PM – 09:00 PM",
 
   location: {
-    name: "Viluppuram",
-    display: "📍 Viluppuram",
+    name: "Thirukoilure",
+    display: "📍 Thirukoilure",
 
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Viluppuram",
   },
@@ -328,103 +328,26 @@ const EVENT_SCHEDULES = {
     {
       time: "04:00 PM",
 
-      title: "Guest Arrival",
+      title: "Reception",
 
       venue: `Reception Venue, ${RECEPTION.location.name}`,
 
-      photo: "images/reception-events/guest-arrival.jpg",
+      photo: "images/reception-events/photo-shoot.jpeg",
 
       details:
         "Welcome to the reception. Guests are invited to arrive and join the celebration.",
     },
 
     {
-      time: "04:30 PM",
-
-      title: "Meet & Greet",
-
-      venue: `Reception Venue, ${RECEPTION.location.name}`,
-
-      photo: null,
-
-      details: "An opportunity to meet the couple, family members and friends.",
-    },
-
-    {
-      time: "05:30 PM",
-
-      title: "Couple's Entry",
-
-      venue: `Reception Venue, ${RECEPTION.location.name}`,
-
-      photo: "images/reception-events/couple-entry.jpg",
-
-      details: `Join us as we welcome ${COUPLE.displayName} to their special evening.`,
-    },
-
-    {
-      time: "06:00 PM",
-
-      title: "Greetings & Blessings",
-
-      venue: `Reception Venue, ${RECEPTION.location.name}`,
-
-      photo: null,
-
-      details:
-        "Family and friends share their blessings and warm wishes with the couple.",
-    },
-
-    {
       time: "07:00 PM",
-
-      title: "Photography & Memories",
-
-      venue: `Reception Venue, ${RECEPTION.location.name}`,
-
-      photo: "images/reception-events/photography.jpg",
-
-      details:
-        "Let's capture some beautiful memories together with family and friends.",
-    },
-
-    {
-      time: "07:30 PM",
 
       title: "Dinner",
 
       venue: `Reception Venue, ${RECEPTION.location.name}`,
 
-      photo: null,
+      photo: "images/reception-events/dinner.jpeg",
 
-      details:
-        "Please join us for dinner and continue the celebration with us.",
-    },
-
-    {
-      time: "09:30 PM",
-
-      title: "Final Greetings",
-
-      venue: `Reception Venue, ${RECEPTION.location.name}`,
-
-      photo: null,
-
-      details:
-        "A final opportunity to meet, greet and share your blessings with the couple.",
-    },
-
-    {
-      time: "10:00 PM",
-
-      title: "Reception Ends",
-
-      venue: `Reception Venue, ${RECEPTION.location.name}`,
-
-      photo: null,
-
-      details:
-        "Thank you for being part of our celebration and making our evening memorable.",
+      details: "An opportunity to meet the couple, family members and friends.",
     },
   ],
 };
