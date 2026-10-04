@@ -285,14 +285,6 @@ const EVENT_SCHEDULES = {
         "Our celebrations begin with Engagement at our home in Tenkasi — a precious family moment filled with love, blessings, and the joy of bringing two families together.",
     },
     {
-      time: "07:00 AM",
-      title: "Family Gathering",
-      venue: `Wedding Venue, ${WEDDING.location.name}`,
-      photo: "images/wedding-events/family-gathering.jpeg",
-      details:
-        "Families and close relatives gather together for the auspicious wedding rituals. This is a special time for both families to come together.",
-    },
-    {
       time: "09:00 AM to 10:30 AM",
       title: "Wedding",
       venue: `Wedding Venue, ${WEDDING.location.name}`,
