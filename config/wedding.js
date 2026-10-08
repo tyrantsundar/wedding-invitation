@@ -232,6 +232,10 @@ const FAMILY = {
         alt: "Groom family",
       },
       {
+        src: "images/groom-brother-sudar.jpeg",
+        alt: "Groom family",
+      },
+      {
         src: "images/groom-brother-anandh.jpeg",
         alt: "Groom family",
       },
