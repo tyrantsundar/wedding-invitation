@@ -82,7 +82,7 @@ const CONTENT = {
     message:
       "With the blessings of our families, we invite you to celebrate our special day with us.",
 
-    scrollText: "Scroll to explore",
+    scrollText: "Scroll Down",
   },
 
   celebrations: {
