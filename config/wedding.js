@@ -116,9 +116,9 @@ const CONTENT = {
 
     brideLabel: "The family that taught her to bloom",
 
-    groomTitle: "GROOM'S TEAM",
+    groomTitle: "Groom's Team",
 
-    brideTitle: "BRIDE'S TEAM",
+    brideTitle: "Bride's Team",
 
     previousCouple: "Previous couple photo",
 
@@ -190,19 +190,17 @@ const FAMILY = {
 
     photos: [
       {
-        src: "images/couple-1.jpeg",
+        src: "images/couple_meetup.jpeg",
         alt: COUPLE.altName,
       },
-
       {
-        src: "images/80s-era.jpeg",
+        src: "images/couple-2.jpeg",
         alt: COUPLE.altName,
       },
-
-      // {
-      //   src: "images/cowboys-era.jpeg",
-      //   alt: COUPLE.altName,
-      // },
+      {
+        src: "images/couple-3.jpeg",
+        alt: COUPLE.altName,
+      },
 
       // {
       //   src: "images/kings-era.jpeg",
@@ -316,7 +314,7 @@ const EVENT_SCHEDULES = {
     },
     {
       time: "05:00 PM",
-      title: "The New Begging !",
+      title: "The New Beginning !",
       venue: `Wedding Venue, ${WEDDING.location.name}`,
       photo: "images/wedding-events/new-beginning.jpeg",
       details:
