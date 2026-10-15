@@ -2435,3 +2435,25 @@ a {
     margin-bottom: 20px;
   }
 }
+
+/* =========================================================
+   CONTINUOUS ROTATION — HERO DECORATIVE IMAGE
+   ========================================================= */
+
+.decorative-symbol {
+  animation: none;
+}
+
+.decorative-symbol img {
+  animation: rotateDecorativeImage 12s linear infinite;
+}
+
+@keyframes rotateDecorativeImage {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
