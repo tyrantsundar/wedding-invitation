@@ -9,54 +9,52 @@
 
 :root {
   /* Global */
-  --text-dark: #403b36;
-  --text-medium: #756e67;
-  --text-light: #9a928a;
+  --text-dark: #4a3038;
+  --text-medium: #78666a;
+  --text-light: #a18f91;
   --white: #ffffff;
 
-  /* Hero - welcoming yellow / orange */
-  --hero-yellow: #fff4c9;
-  --hero-gold: #f7d98b;
-  --hero-orange: #efa66d;
-  --hero-deep-orange: #d98255;
+  /* Hero - elegant ivory, blush and antique gold */
+  --hero-yellow: #f8f1e9;
+  --hero-gold: #d9b978;
+  --hero-orange: #e8bfc6;
+  --hero-deep-orange: #b98591;
 
-  /* Celebration */
-  --celebration-bg: #fffaf0;
-  --celebration-accent: #d7a85c;
-  --celebration-soft: #f5e8c8;
+  /* Celebration - warm ivory with gold accents */
+  --celebration-bg: #f8f1e9;
+  --celebration-accent: #b79a62;
+  --celebration-soft: #f0e2d7;
 
-  /* Our Story - pink */
-  --story-bg: #fff0f4;
-  --story-pink: #e7a5b5;
-  --story-dark-pink: #c9788e;
-  --story-soft: #f9dce4;
+  /* Our Story - romantic blush pink */
+  --story-bg: #fff5f5;
+  --story-pink: #e8bfc6;
+  --story-dark-pink: #b98591;
+  --story-soft: #f5dde1;
 
-  /* Groom family - blue */
-  --groom-bg: #edf7fc;
-  --groom-blue: #9bc7dc;
-  --groom-dark-blue: #6097b4;
-  --groom-soft: #dceef7;
+  /* Groom family - ivory with muted rose accents */
+  --groom-bg: #f8f1e9;
+  --groom-blue: #d8c2c4;
+  --groom-dark-blue: #a9828b;
+  --groom-soft: #efe3e1;
 
-  /* Bride family - baby pink */
-  --bride-bg: #fff1f6;
-  --bride-pink: #e8a9bd;
-  --bride-dark-pink: #ca7895;
-  --bride-soft: #f9dce7;
+  /* Bride family - soft blush pink */
+  --bride-bg: #fff1f4;
+  --bride-pink: #e8bfc6;
+  --bride-dark-pink: #b98591;
+  --bride-soft: #f9e1e6;
 
-  /* Countdown */
-  --countdown-bg: #f8f1e6;
-  --countdown-accent: #d49b70;
+  /* Countdown - dusty rose and ivory */
+  --countdown-bg: #f3e4e3;
+  --countdown-accent: #b98591;
 
-  /* Thank you */
-  --thankyou-bg: #fffaf5;
-  --thankyou-accent: #d9a17d;
+  /* Thank you - elegant warm ivory */
+  --thankyou-bg: #f8f1e9;
+  --thankyou-accent: #b79a62;
 
   /* Borders / shadows */
-  --border-light: rgba(100, 90, 80, 0.12);
-
-  --shadow-soft: 0 10px 35px rgba(90, 70, 50, 0.08);
-
-  --shadow-medium: 0 18px 50px rgba(90, 70, 50, 0.12);
+  --border-light: rgba(120, 85, 90, 0.14);
+  --shadow-soft: 0 10px 35px rgba(90, 55, 65, 0.07);
+  --shadow-medium: 0 18px 50px rgba(90, 55, 65, 0.12);
 
   /* Radius */
   --radius-small: 12px;
@@ -1922,6 +1920,497 @@ a {
 
 /* =========================================================
    ALL COUPLE & FAMILY PHOTOS — SQUARE 1:1
+   ========================================================= */
+
+#couple-gallery .family-photo,
+#groom-gallery .family-photo,
+#bride-gallery .family-photo {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+#couple-gallery .family-photo img,
+#groom-gallery .family-photo img,
+#bride-gallery .family-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .decorative-symbol {
+    width: 95px;
+    height: 95px;
+    margin-bottom: 20px;
+  }
+}
+
+/* =========================================================
+   ROYAL WEDDING THEME
+   Emerald • Ivory • Antique Gold
+   ========================================================= */
+/* =========================================================
+   ROMANTIC WEDDING THEME
+   Ivory • Blush Pink • Dusty Rose • Antique Gold
+   ========================================================= */
+
+:root {
+  /* Global typography */
+  --text-dark: #4a3038;
+  --text-medium: #78666a;
+  --text-light: #a18f91;
+  --white: #ffffff;
+
+  /* Romantic palette */
+  --ivory: #f8f1e9;
+  --ivory-light: #fffaf5;
+  --blush-pink: #f6e3e6;
+  --soft-pink: #fbeef0;
+  --dusty-rose: #b98591;
+  --rose-deep: #986573;
+  --antique-gold: #b79a62;
+  --gold-light: #d9c28e;
+  --gold-border: rgba(183, 154, 98, 0.3);
+
+  /* Section variables */
+  --hero-yellow: #fff8f2;
+  --hero-gold: #d9c28e;
+  --hero-orange: #f0d2d6;
+  --hero-deep-orange: #b98591;
+
+  --celebration-bg: #f8f1e9;
+  --celebration-accent: #b79a62;
+  --celebration-soft: #f0e2d7;
+
+  --story-bg: #fff5f5;
+  --story-pink: #e8bfc6;
+  --story-dark-pink: #b98591;
+  --story-soft: #f5dde1;
+
+  --groom-bg: #f8f1e9;
+  --groom-blue: #e5cdd1;
+  --groom-dark-blue: #a9828b;
+  --groom-soft: #efe3e1;
+
+  --bride-bg: #fff1f4;
+  --bride-pink: #e8bfc6;
+  --bride-dark-pink: #b98591;
+  --bride-soft: #f9e1e6;
+
+  --countdown-bg: #f3e4e3;
+  --countdown-accent: #b98591;
+
+  --thankyou-bg: #f8f1e9;
+  --thankyou-accent: #b79a62;
+
+  /* Borders and shadows */
+  --border-light: rgba(120, 85, 90, 0.14);
+  --shadow-soft: 0 10px 35px rgba(90, 55, 65, 0.07);
+  --shadow-medium: 0 18px 50px rgba(90, 55, 65, 0.12);
+
+  /* Layout */
+  --radius-small: 12px;
+  --radius-medium: 20px;
+  --radius-large: 30px;
+
+  --content-width: 1120px;
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+  --transition-slow: 0.7s ease;
+}
+
+/* =========================================================
+   HERO — IVORY AND DUSTY ROSE
+   ========================================================= */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.85),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(232, 191, 198, 0.22),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #fffaf5 0%, #f9e9e7 48%, #f3dce1 75%, #f7e9df 100%);
+}
+
+.hero::before,
+.hero::after {
+  border-color: rgba(185, 133, 145, 0.25);
+}
+
+.hero-content::before,
+.hero-content::after {
+  color: rgba(185, 133, 145, 0.6);
+}
+
+.decorative-symbol {
+  border-color: var(--antique-gold);
+  background: rgba(255, 250, 245, 0.75);
+  box-shadow: 0 0 0 5px rgba(183, 154, 98, 0.08);
+}
+
+.invitation-text {
+  color: #a17a51;
+}
+
+.wedding-date {
+  color: #986f50;
+}
+
+.divider {
+  color: var(--antique-gold);
+}
+
+.divider span:first-child,
+.divider span:last-child {
+  background: linear-gradient(to right, transparent, rgba(183, 154, 98, 0.6));
+}
+
+.divider span:last-child {
+  background: linear-gradient(to left, transparent, rgba(183, 154, 98, 0.6));
+}
+
+.invite-message {
+  color: #78616a;
+}
+
+.couple-names {
+  color: #583c46;
+}
+
+.couple-names span {
+  color: var(--dusty-rose);
+}
+
+.scroll-text,
+.scroll-arrow {
+  color: var(--rose-deep);
+}
+
+/* =========================================================
+   CELEBRATIONS — WARM IVORY AND GOLD
+   ========================================================= */
+
+.events-section {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(240, 226, 215, 0.55),
+      transparent 30%
+    ),
+    var(--ivory);
+}
+
+.events-section::before,
+.events-section::after {
+  color: rgba(183, 154, 98, 0.4);
+}
+
+.events-section .section-label,
+.events-section .heading-divider {
+  color: #a17e48;
+}
+
+.event-card {
+  background: rgba(255, 250, 245, 0.96);
+  border-color: var(--gold-border);
+  box-shadow: 0 12px 35px rgba(90, 55, 65, 0.07);
+}
+
+.event-card::before {
+  background: linear-gradient(90deg, #d9c28e, #e8bfc6, #d9c28e);
+}
+
+.event-icon,
+.event-card:nth-child(2) .event-icon {
+  background: #f3e4e3;
+  color: var(--rose-deep);
+}
+
+.event-type {
+  color: #a17e48;
+}
+
+.event-card h3 {
+  color: #583c46;
+}
+
+.event-divider {
+  color: var(--antique-gold);
+}
+
+.event-button {
+  border-color: var(--dusty-rose);
+  background: var(--dusty-rose);
+  color: #ffffff;
+}
+
+.event-button:hover {
+  background: var(--rose-deep);
+}
+
+.location-button {
+  border-color: var(--gold-border);
+  color: var(--rose-deep);
+}
+
+.location-button:hover {
+  background: #f6e8e5;
+}
+
+/* =========================================================
+   OUR STORY AND FAMILY GALLERIES
+   ========================================================= */
+
+.family-section {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 255, 255, 0.85),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(232, 191, 198, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #fff7f6 0%, #fffaf5 52%, #fbecef 100%);
+}
+
+.family-section::before,
+.family-section::after {
+  color: rgba(185, 133, 145, 0.4);
+}
+
+.family-section .section-label,
+.family-section .heading-divider {
+  color: var(--rose-deep);
+}
+
+.family-gallery-heading h3 {
+  color: #583c46;
+}
+
+.family-gallery-heading::before,
+.family-gallery-heading::after {
+  color: rgba(185, 133, 145, 0.4);
+}
+
+.family-photo {
+  border-color: #ffffff;
+  box-shadow: 0 12px 35px rgba(166, 96, 115, 0.12);
+}
+
+.slider-button {
+  border-color: rgba(185, 133, 145, 0.22);
+  background: rgba(255, 250, 245, 0.95);
+  color: var(--rose-deep);
+}
+
+.slider-button:hover {
+  background: #ffffff;
+}
+
+/* =========================================================
+   COUNTDOWN — DUSTY ROSE AND IVORY
+   ========================================================= */
+
+.countdown-section {
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(255, 255, 255, 0.7),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(232, 191, 198, 0.22),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #f5e5e5 0%, #f8ece8 55%, #f1dfe3 100%);
+}
+
+.countdown-content .section-label,
+.countdown-content .heading-divider {
+  color: var(--rose-deep);
+}
+
+.countdown-content h2 {
+  color: #583c46;
+}
+
+.countdown-message {
+  color: #78666a;
+}
+
+.countdown-box {
+  background: rgba(255, 250, 245, 0.88);
+  border-color: rgba(185, 133, 145, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(90, 55, 65, 0.06);
+}
+
+.countdown-box span {
+  color: var(--rose-deep);
+}
+
+.countdown-box small {
+  color: #78666a;
+}
+
+.countdown-date {
+  color: var(--rose-deep);
+}
+
+.countdown-heart {
+  color: var(--dusty-rose);
+}
+
+/* =========================================================
+   THANK YOU — ELEGANT IVORY CLOSING
+   ========================================================= */
+
+.thank-you-section {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(232, 191, 198, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(217, 194, 142, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(145deg, #fffaf5 0%, #f8f1e9 60%, #f7e8e8 100%);
+}
+
+.thank-you-content .section-label,
+.thank-you-content .heading-divider {
+  color: var(--rose-deep);
+}
+
+.thank-you-content h2,
+.thank-you-names {
+  color: #583c46;
+}
+
+.thank-you-names span,
+.thank-you-date,
+.thank-you-divider span:nth-child(2) {
+  color: var(--antique-gold);
+}
+
+.thank-you-heart {
+  background: #f5e2e2;
+  color: var(--rose-deep);
+  border: 1px solid rgba(185, 133, 145, 0.2);
+}
+
+.thank-you-message {
+  color: #78666a;
+}
+
+.thank-you-divider span:first-child,
+.thank-you-divider span:last-child {
+  background: #e8d6d3;
+}
+
+.back-to-top {
+  border-color: rgba(185, 133, 145, 0.28);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--rose-deep);
+}
+
+.back-to-top:hover {
+  background: #ffffff;
+}
+
+/* =========================================================
+   EVENT MODAL — IVORY AND ROSE
+   ========================================================= */
+
+.event-modal-overlay {
+  background: rgba(65, 42, 49, 0.55);
+}
+
+.event-modal-content {
+  background: var(--ivory-light);
+  border: 1px solid var(--gold-border);
+}
+
+.event-modal-content::before {
+  background: #e5cdd1;
+}
+
+.event-modal-close {
+  border-color: var(--gold-border);
+  background: rgba(255, 250, 245, 0.95);
+  color: var(--rose-deep);
+}
+
+.event-modal-inner > .section-label,
+.event-modal-inner > .heading-divider {
+  color: var(--rose-deep);
+}
+
+.event-modal-inner h2 {
+  color: #583c46;
+}
+
+.modal-event-info p:first-child {
+  color: #583c46;
+}
+
+.schedule-content {
+  border-color: #eadfdc;
+  background: #ffffff;
+}
+
+.schedule-time {
+  color: #a17e48;
+}
+
+.schedule-title {
+  color: #583c46;
+}
+
+.schedule-details-button {
+  border-color: rgba(185, 133, 145, 0.22);
+  background: #fff7f5;
+  color: var(--rose-deep);
+}
+
+.schedule-details-button:hover {
+  background: #f7e8e8;
+}
+
+/* =========================================================
+   SCROLLBAR — SOFT ROSE
+   ========================================================= */
+
+::-webkit-scrollbar-track {
+  background: #fbf5f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfc5c8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b98591;
+}
+
+/* =========================================================
+   RESPONSIVE PHOTO SIZING — PRESERVE SQUARE GALLERIES
    ========================================================= */
 
 #couple-gallery .family-photo,
