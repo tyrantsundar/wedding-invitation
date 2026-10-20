@@ -218,6 +218,10 @@ const FAMILY = {
         alt: "Groom family",
       },
       {
+        src: "images/groom-aachi.jpeg",
+        alt: "Groom family",
+      },
+      {
         src: "images/groom-sister.jpeg",
         alt: "Groom family",
       },
@@ -226,11 +230,15 @@ const FAMILY = {
         alt: "Groom family",
       },
       {
+        src: "images/groom-periyappa.jpeg",
+        alt: "Groom family",
+      },
+      {
         src: "images/groom-chithappa.jpeg",
         alt: "Groom family",
       },
       {
-        src: "images/groom-periyappa.jpeg",
+        src: "images/groom-akka-saranya.jpeg",
         alt: "Groom family",
       },
       {
