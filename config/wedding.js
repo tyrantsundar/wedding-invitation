@@ -61,7 +61,7 @@ const RECEPTION = {
     name: "Thirukoilure",
     display: "📍 Thirukoilure",
 
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Viluppuram",
+    mapUrl: "https://maps.app.goo.gl/oCxGV7Mf5q1fACpR7",
   },
 };
 
