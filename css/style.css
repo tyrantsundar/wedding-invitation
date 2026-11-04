@@ -2457,3 +2457,17 @@ a {
     transform: rotate(360deg);
   }
 }
+
+/* =========================================================
+   EVENT SCHEDULE — FIX DETAILS & REMOVE TIMELINE LINE
+   ========================================================= */
+
+/* Show event description when View Details is clicked */
+.schedule-details.active {
+  display: block;
+}
+
+/* Remove the vertical timeline line */
+.event-timeline::before {
+  display: none;
+}
